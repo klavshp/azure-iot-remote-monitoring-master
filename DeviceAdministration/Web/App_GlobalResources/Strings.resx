@@ -478,7 +478,7 @@
     <comment>(Unused)</comment>
   </data>
   <data name="MicrosoftAzureIoTSuite" xml:space="preserve">
-    <value>CGI Azure IoT Suite</value>
+    <value>CGI Azure IoT Suite</value>  <!-- This is customized -->
     <comment>Section heading.</comment>
   </data>
   <data name="SignIn" xml:space="preserve">

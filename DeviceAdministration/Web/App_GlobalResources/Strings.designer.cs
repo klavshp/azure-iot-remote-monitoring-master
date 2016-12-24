@@ -2186,7 +2186,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CGI Azure IoT Suite.
+        ///   Looks up a localized string similar to This is customized.
         /// </summary>
         public static string MicrosoftAzureIoTSuite {
             get {
