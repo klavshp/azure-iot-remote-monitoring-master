@@ -42,22 +42,22 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
         }
 
         private static List<Location> _possibleDeviceLocations = new List<Location>{
-            new Location(47.659159, -122.141515),  // Microsoft Red West Campus, Building A
-            new Location(47.593307, -122.332165),  // 800 Occidental Ave S, Seattle, WA 98134
-            new Location(47.617025, -122.191285),  // 11111 NE 8th St, Bellevue, WA 98004
-            new Location(47.583582, -122.130622),  // 3003 160th Ave SE Bellevue, WA 98008
-            new Location(47.639511, -122.134376),  // 15580 NE 31st St Redmond, WA 98008
-            new Location(47.644328, -122.137036),  // 15255 NE 40th St Redmond, WA 98008
-            new Location(47.621573, -122.338101),  // 320 Westlake Ave N, Seattle, WA 98109
-            new Location(47.642357, -122.137152), // 15010 NE 36th St, Redmond, WA 98052
-            new Location(47.614981, -122.195781), //500 108th Ave NE, Bellevue, WA 98004 
-            new Location(47.642528, -122.130565), //3460 157th Ave NE, Redmond, WA 98052
-            new Location(47.617187, -122.191685), //11155 NE 8th St, Bellevue, WA 98004
-            new Location(47.677292, -122.093030), //18500 NE Union Hill Rd, Redmond, WA 98052
-            new Location(47.642528, -122.130565), //3600 157th Ave NE, Redmond, WA 98052
-            new Location(47.642876, -122.125492), //16070 NE 36th Way Bldg 33, Redmond, WA 98052
-            new Location(47.637376, -122.140445), //14999 NE 31st Way, Redmond, WA 98052
-            new Location(47.636121, -122.130254) //3009 157th Pl NE, Redmond, WA 98052
+            new Location(55.7359677, 12.388040600000068),           // Lautruphøj 10
+            new Location(55.73669599999999, 12.388249999999971),    // Lautruphøj 12
+            new Location(55.738291, 12.39358059999995),             // Lautrupparken 42
+            new Location(55.7352032, 12.390869399999929),           // Lautrupparken 46
+            new Location(55.735744, 12.382654000000002),            // Borupgaard gymnasium
+            //new Location(47.644328, -122.137036),  // 15255 NE 40th St Redmond, WA 98008
+            //new Location(47.621573, -122.338101),  // 320 Westlake Ave N, Seattle, WA 98109
+            //new Location(47.642357, -122.137152), // 15010 NE 36th St, Redmond, WA 98052
+            //new Location(47.614981, -122.195781), //500 108th Ave NE, Bellevue, WA 98004 
+            //new Location(47.642528, -122.130565), //3460 157th Ave NE, Redmond, WA 98052
+            //new Location(47.617187, -122.191685), //11155 NE 8th St, Bellevue, WA 98004
+            //new Location(47.677292, -122.093030), //18500 NE Union Hill Rd, Redmond, WA 98052
+            //new Location(47.642528, -122.130565), //3600 157th Ave NE, Redmond, WA 98052
+            //new Location(47.642876, -122.125492), //16070 NE 36th Way Bldg 33, Redmond, WA 98052
+            //new Location(47.637376, -122.140445), //14999 NE 31st Way, Redmond, WA 98052
+            //new Location(47.636121, -122.130254) //3009 157th Pl NE, Redmond, WA 98052
         };
 
         public static DeviceModel GetSampleSimulatedDevice(string deviceId, string key)
@@ -104,7 +104,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
             }
 
             device.DeviceProperties.HubEnabledState = true;
-            device.DeviceProperties.Manufacturer = "Contoso Inc.";
+            device.DeviceProperties.Manufacturer = "CGI Danmark";
             device.DeviceProperties.ModelNumber = "MD-" + randomId;
             device.DeviceProperties.SerialNumber = "SER" + randomId;
             device.DeviceProperties.FirmwareVersion = "1." + randomId;
