@@ -10,7 +10,6 @@
 /// <reference path="jquery-2.2.3.min.js" />
 /// <reference path="jquery-datatables-api-extensions.js" />
 /// <reference path="jquery-datatables-plugins.js" />
-/// <reference path="jquery-ui-1.11.4.js" />
 /// <reference path="jquery-ui-1.11.4.min.js" />
 /// <reference path="jquery-ui-i18n.min.js" />
 /// <reference path="js.cookie-1.5.1.min.js" />

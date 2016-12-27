@@ -13,9 +13,9 @@
 	position: absolute;
 	z-index: 9999;
 	max-width: 300px;
-    background-color:#222;
-    color:#fff;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	box-shadow: 0 0 5px #aaa;
 }
 body .ui-tooltip {
-    
+	border-width: 2px;
 }

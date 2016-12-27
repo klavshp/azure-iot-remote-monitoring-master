@@ -54,6 +54,10 @@
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
 	float: right;
 }
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+}
 .ui-dialog .ui-resizable-se {
 	width: 12px;
 	height: 12px;
