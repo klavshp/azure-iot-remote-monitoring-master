@@ -220,7 +220,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
                     double.Parse(
                         editModel.Threshold,
                         NumberStyles.Float,
-                        CultureInfo.CurrentCulture);
+                        CultureInfo.InvariantCulture);
             }
 
             return rule;

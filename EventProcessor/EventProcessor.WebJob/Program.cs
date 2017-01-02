@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.EventProcessor.W
         private const string ShutdownFileEnvVar = "WEBJOBS_SHUTDOWN_FILE";
         private static string _shutdownFile;
 
-        static void Main(string[] args)
+        static void Main()
         {
             try
             {
@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.EventProcessor.W
                     fileSystemWatcher.EnableRaisingEvents = true;
 
                     // In case the file had already been created before we started watching it.
-                    if (System.IO.File.Exists(_shutdownFile))
+                    if (File.Exists(_shutdownFile))
                     {
                         shutdownSignalReceived = true;
                     }
@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.EventProcessor.W
             catch (Exception ex)
             {
                 CancellationTokenSource.Cancel();
-                Trace.TraceError("Webjob terminating: {0}", ex.ToString());
+                Trace.TraceError("Webjob terminating: {0}", ex);
             }
         }
 
