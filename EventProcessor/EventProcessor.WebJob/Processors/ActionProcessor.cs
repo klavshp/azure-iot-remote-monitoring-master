@@ -82,7 +82,6 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.EventProcessor.W
                     {
                         foreach (ActionModel item in results)
                         {
-                            Trace.TraceInformation($"Processing: DeviceId {item.DeviceID}, Reading {item.Reading}, ReadingType {item.ReadingType}");
                             await ProcessAction(item);
                         }
                     }
