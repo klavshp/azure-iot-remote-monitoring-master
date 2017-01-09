@@ -6,8 +6,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 {
     public class IotHubTransportFactory : ITransportFactory
     {
-        private ILogger _logger;
-        private IConfigurationProvider _configurationProvider;
+        private readonly ILogger _logger;
+        private readonly IConfigurationProvider _configurationProvider;
 
         public IotHubTransportFactory(ILogger logger,
             IConfigurationProvider configurationProvider)

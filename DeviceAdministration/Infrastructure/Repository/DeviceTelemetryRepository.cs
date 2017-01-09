@@ -30,11 +30,12 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
         /// The IConfigurationProvider implementation with which to initialize 
         /// the new instance.
         /// </param>
+        /// <param name="blobStorageClientFactory"></param>
         public DeviceTelemetryRepository(IConfigurationProvider configProvider, IBlobStorageClientFactory blobStorageClientFactory)
         {
             if (configProvider == null)
             {
-                throw new ArgumentNullException("configProvider");
+                throw new ArgumentNullException(nameof(configProvider));
             }
 
             string telemetryContainerName = configProvider.GetConfigurationSettingValue("TelemetryStoreContainerName");
@@ -57,10 +58,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
         /// Telemetry for the Device specified by deviceId, inclusively since 
         /// minTime.
         /// </returns>
-        public async Task<IEnumerable<DeviceTelemetryModel>> LoadLatestDeviceTelemetryAsync(
-            string deviceId,
-            IList<DeviceTelemetryFieldModel> telemetryFields, 
-            DateTime minTime)
+        public async Task<IEnumerable<DeviceTelemetryModel>> LoadLatestDeviceTelemetryAsync(string deviceId, IList<DeviceTelemetryFieldModel> telemetryFields, DateTime minTime)
         {
             IEnumerable<DeviceTelemetryModel> result = new DeviceTelemetryModel[0];
             IEnumerable<DeviceTelemetryModel> blobModels;

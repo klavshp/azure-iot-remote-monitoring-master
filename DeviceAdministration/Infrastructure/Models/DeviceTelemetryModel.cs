@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infrastructure.Models
 {
     /// <summary>
@@ -19,15 +18,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
             set;
         }
 
-        /// <summary>
-        /// Values for telemetry data associated with individual fields
-        /// </summary>
-        private IDictionary<string, double> values = new Dictionary<string, double>();
-        public IDictionary<string, double> Values
-        {
-            get { return values; }
-            set { values = value; }
-        }
+        public IDictionary<string, double> Values { get; set; } = new Dictionary<string, double>();
 
         /// <summary>
         /// Gets or sets the time of record for the represented telemetry 

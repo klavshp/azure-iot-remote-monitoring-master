@@ -6,9 +6,7 @@ using Microsoft.Azure.Devices.Client;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Models;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -23,7 +21,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         private readonly IConfigurationProvider _configurationProvider;
         private readonly IDevice _device;
         private DeviceClient _deviceClient;
-        private bool _disposed = false;
+        private bool _disposed;
 
         public IoTHubTransport(ILogger logger, IConfigurationProvider configurationProvider, IDevice device)
         {
@@ -50,22 +48,20 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         /// <summary>
         /// Builds the IoT Hub connection string
         /// </summary>
-        /// <param name="device"></param>
         /// <returns></returns>
         private string GetConnectionString()
         {
             string key = _device.PrimaryAuthKey;
-            string deviceID = _device.DeviceID;
+            string deviceId = _device.DeviceID;
             string hostName = _device.HostName;
 
-            var authMethod = new DeviceAuthenticationWithRegistrySymmetricKey(deviceID, key);
+            var authMethod = new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, key);
             return Client.IotHubConnectionStringBuilder.Create(hostName, authMethod).ToString();
         }
 
         /// <summary>
         /// Sends an event to the IoT Hub
         /// </summary>
-        /// <param name="device"></param>
         /// <param name="eventData"></param>
         /// <returns></returns>
         public async Task SendEventAsync(dynamic eventData)
@@ -77,13 +73,11 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         /// <summary>
         /// Sends an event to IoT Hub using the provided eventId GUID
         /// </summary>
-        /// <param name="device"></param>
         /// <param name="eventId"></param>
         /// <param name="eventData"></param>
         /// <returns></returns>
         public async Task SendEventAsync(Guid eventId, dynamic eventData)
         {
-            byte[] bytes;
             string objectType = this.GetObjectType(eventData);
             var objectTypePrefix = _configurationProvider.GetConfigurationSettingValue("ObjectTypePrefix");
 
@@ -96,7 +90,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             //string rawJson = JsonConvert.SerializeObject(eventData);
             //Trace.TraceInformation(rawJson);
 
-            bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eventData));
+            byte[] bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eventData));
 
             var message = new Client.Message(bytes);
             message.Properties["EventId"] = eventId.ToString();
@@ -127,18 +121,14 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         /// <summary>
         /// Retrieves the next message from the IoT Hub
         /// </summary>
-        /// <param name="device">The device to retieve the IoT Hub message for</param>
         /// <returns>Returns a DeserializableCommand that wraps the byte array of the message from IoT Hub</returns>
         public async Task<DeserializableCommand> ReceiveAsync()
         {
             Client.Message message = await AzureRetryHelper.OperationWithBasicRetryAsync(
                 async () =>
                 {
-                    Exception exp;
-                    Client.Message msg;
-
-                    exp = null;
-                    msg = null;
+                    Exception exp = null;
+                    Client.Message msg = null;
                     try
                     {
                         msg = await _deviceClient.ReceiveAsync();
