@@ -3,9 +3,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Models;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Models.Commands;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Telemetry;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Telemetry;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Devices
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Devices
 {
     /// <summary>
     /// Represents a device. Implementors may be written in managed code, or a managed wrapper

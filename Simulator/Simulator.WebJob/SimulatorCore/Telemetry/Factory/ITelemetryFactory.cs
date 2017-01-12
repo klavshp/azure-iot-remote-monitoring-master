@@ -1,6 +1,6 @@
-﻿using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Devices;
+﻿using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Devices;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Telemetry.Factory
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Telemetry.Factory
 {
     public interface ITelemetryFactory
     {

@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.Cooler.Telemetry.Data
+﻿namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Telemetry.Data
 {
     public class RemoteMonitorTelemetryData
     {

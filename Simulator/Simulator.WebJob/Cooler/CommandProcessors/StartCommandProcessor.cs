@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.Cooler.Devices;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.CommandProcessors;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Transport;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.Devices;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.CommandProcessors;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Transport;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.Cooler.CommandProcessors
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Cooler.CommandProcessors
 {
     /// <summary>
     /// Command processor to start telemetry data

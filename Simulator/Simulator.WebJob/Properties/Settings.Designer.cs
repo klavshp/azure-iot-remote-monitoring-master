@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.Properties {
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

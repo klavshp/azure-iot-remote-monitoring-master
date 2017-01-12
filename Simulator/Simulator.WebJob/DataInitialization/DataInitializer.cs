@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.DataInitialization
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.DataInitialization
 {
     public class DataInitializer : IDataInitializer
     {

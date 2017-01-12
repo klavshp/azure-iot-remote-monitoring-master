@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Logging
+﻿namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Logging
 {
     /// <summary>
     /// Simple interface to insulate the app from the logging technology 
