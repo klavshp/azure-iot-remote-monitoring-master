@@ -5,7 +5,7 @@ using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Models.Comman
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Transport
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Transport
 {
     /// <summary>
     /// Wraps the byte array returned from the cloud so that it can be deserialized

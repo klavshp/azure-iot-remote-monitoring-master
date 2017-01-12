@@ -1,7 +1,5 @@
 ﻿using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Configurations;
 using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Helpers;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Devices;
-using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Logging;
 using Microsoft.Azure.Devices.Client;
 using System;
 using System.Collections.Generic;
@@ -9,8 +7,10 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Text;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Devices;
+using Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Logging;
 
-namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob.SimulatorCore.Transport
+namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.SimulatorCore.Transport
 {
     /// <summary>
     /// Implementation of ITransport that talks to IoT Hub.
@@ -87,8 +87,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             }
 
             // sample code to trace the raw JSON that is being sent
-            //string rawJson = JsonConvert.SerializeObject(eventData);
-            //Trace.TraceInformation(rawJson);
+            string rawJson = JsonConvert.SerializeObject(eventData);
+            Trace.TraceInformation(rawJson);
 
             byte[] bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eventData));
 
