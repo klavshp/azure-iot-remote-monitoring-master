@@ -50,6 +50,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         /// <param name="deviceLogic">
         /// The IDeviceLogic implementation that the new instance will use.
         /// </param>
+        /// <param name="configProvider"></param>
         public TelemetryApiController(
             IDeviceTelemetryLogic deviceTelemetryLogic,
             IAlertsLogic alertsLogic,
