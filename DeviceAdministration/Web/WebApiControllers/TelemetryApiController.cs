@@ -194,9 +194,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
                     return telemetryModels.OrderBy(t => t.Timestamp).ToArray();
                 };
 
-            return await GetServiceResponseAsync<DeviceTelemetryModel[]>(
-                getTelemetry,
-                false);
+            return await GetServiceResponseAsync<DeviceTelemetryModel[]>(getTelemetry, false);
         }
 
         [HttpGet]

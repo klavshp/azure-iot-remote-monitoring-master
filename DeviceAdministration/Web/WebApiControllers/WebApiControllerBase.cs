@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         {
             if (getData == null)
             {
-                throw new ArgumentNullException("getData");
+                throw new ArgumentNullException(nameof(getData));
             }
 
             return await GetServiceResponseAsync<object>(async () =>
@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         {
             if (getData == null)
             {
-                throw new ArgumentNullException("getData");
+                throw new ArgumentNullException(nameof(getData));
             }
 
             return await GetServiceResponseAsync(getData, true);
@@ -58,11 +58,11 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         /// <returns></returns>
         protected async Task<HttpResponseMessage> GetServiceResponseAsync<T>(Func<Task<T>> getData, bool useServiceResponse)
         {
-            ServiceResponse<T> response = new ServiceResponse<T>();
+            var response = new ServiceResponse<T>();
 
             if (getData == null)
             {
-                throw new ArgumentNullException("getData");
+                throw new ArgumentNullException(nameof(getData));
             }
 
             try
@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
                 }
                 else
                 {
-                    foreach (string error in ex.Errors)
+                    foreach (var error in ex.Errors)
                     {
                         response.Error.Add(new Error(error));
                     }

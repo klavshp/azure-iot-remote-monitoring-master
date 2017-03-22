@@ -1,5 +1,4 @@
 ﻿using System.Web.Http;
-﻿using System.Net.Http.Formatting;
 using Owin;
 
 namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web
