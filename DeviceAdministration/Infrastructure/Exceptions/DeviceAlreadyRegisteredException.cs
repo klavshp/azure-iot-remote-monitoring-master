@@ -19,15 +19,6 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
         {
         }
 
-        public override string Message
-        {
-            get
-            {
-                return string.Format(
-                    CultureInfo.CurrentCulture,
-                    Strings.DeviceAlreadyRegisteredExceptionMessage, 
-                    DeviceId);
-            }
-        }
+        public override string Message => string.Format(CultureInfo.CurrentCulture, $"Device {DeviceId} is already registered.");
     }
 }

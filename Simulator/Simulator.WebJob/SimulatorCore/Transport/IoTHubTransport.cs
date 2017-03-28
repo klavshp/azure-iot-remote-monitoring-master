@@ -87,8 +87,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             }
 
             // sample code to trace the raw JSON that is being sent
-            //string rawJson = JsonConvert.SerializeObject(eventData);
-            //Trace.TraceInformation(rawJson);
+            string rawJson = JsonConvert.SerializeObject(eventData);
+            Trace.TraceInformation("Sending message: " + rawJson);
 
             byte[] bytes = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eventData));
 

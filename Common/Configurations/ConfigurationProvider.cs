@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -19,10 +20,10 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Configura
 
         public string GetConfigurationSettingValueOrDefault(string configurationSettingName, string defaultValue)
         {
-
                 if (!this.configuration.ContainsKey(configurationSettingName))
                 {
                     string configValue = CloudConfigurationManager.GetSetting(configurationSettingName);
+
                     bool isEmulated = Environment.CommandLine.Contains("iisexpress.exe") || 
                         Environment.CommandLine.Contains("w3wp.exe") ||
                         Environment.CommandLine.Contains("WebJob.vshost.exe");
